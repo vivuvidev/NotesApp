@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <!--
+        Exposes context.filesDir/media/ through FileProvider so the system
+        camera app can write captured photos to our private storage.
+        Must match the directory used in AddEditNoteViewModel.createCameraOutputUri().
+    -->
+    <files-path name="app_images" path="media/" />
+    <files-path name="app_attachments" path="attachments/" />
+</paths>

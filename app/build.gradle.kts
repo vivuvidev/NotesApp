@@ -6,22 +6,23 @@ plugins {
 }
 
 android {
-    namespace = "com.example.notesapp"
+    namespace = "com.vivuvi.lightnotes"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.example.notesapp"
+        applicationId = "com.vivuvi.lightnotes"
         minSdk = 24
         targetSdk = 36
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 4
+        versionName = "1.0.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
+            isShrinkResources = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -37,6 +38,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
 }
 
@@ -50,7 +52,10 @@ dependencies {
     implementation(libs.androidx.compose.ui.graphics)
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material3)
+    implementation(libs.compose.material.icons.extended)
     implementation(libs.androidx.material3)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.material)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -73,6 +78,7 @@ dependencies {
 
     implementation("androidx.navigation:navigation-compose:$nav_version")
     implementation("androidx.compose.runtime:runtime-livedata:1.10.4")
-
-
+    implementation("androidx.compose.ui:ui-text-google-fonts:1.10.5")
+    implementation(libs.coil.compose)
+    implementation("androidx.datastore:datastore-preferences:1.1.1")
 }
